@@ -27,3 +27,7 @@ h2 {
 .fa-cloud-sun-rain {
   font-size: 40px;
 }
+.small {
+  display: block;
+  text-align: center;
+}
