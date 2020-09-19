@@ -1,0 +1,29 @@
+body {
+}
+
+.card-body {
+  color: #e8ded2;
+  background-image: linear-gradient(to top, #d9afd9 0%, #97d9e1 100%);
+}
+
+h1 {
+  color: #776d8a;
+}
+h2 {
+  color: #e8ded2;
+}
+.fa-cloud {
+  font-size: 50px;
+}
+.fa-cloud-sun {
+  font-size: 40px;
+}
+.fa-sun {
+  font-size: 40px;
+}
+.fa-cloud-showers-heavy {
+  font-size: 40px;
+}
+.fa-cloud-sun-rain {
+  font-size: 40px;
+}
