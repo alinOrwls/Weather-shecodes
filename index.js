@@ -35,17 +35,16 @@ function displayWeather(response) {
   let descriptionElement = document.querySelector("#description");
   let feelsElement = document.querySelector("#feels");
   let dateElement = document.querySelector("#date");
-  let iconElement = document.querySelector("#icon");
+  //  let iconElement = document.querySelector("#icon");
 
   temperatureElement.innerHTML = Math.round(response.data.main.temp);
   cityElement.innerHTML = response.data.name;
   descriptionElement.innerHTML = response.data.weather[0].description;
   feelsElement.innerHTML = Math.round(response.data.main.feels_like);
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
-  iconElement.setAttribute(
-    "src",
-    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-  );
+  // iconElement.setAttribute(
+  // "src",
+  // `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
 }
 
 function search(city) {
@@ -56,33 +55,9 @@ function search(city) {
 
 function formatForm(event) {
   event.preventDefault();
-  let city = document.querySelector("#city-input").value;
-  search(city);
+  let city = document.querySelector("#city-input");
+  search(city.value);
 }
 
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", formatForm);
-
-// 3
-
-function inFahrenheit() {
-  let fahrenheitElement = document.querySelector("#fahrenheit");
-  let temperature = Math.round((temperatureElement.innerHTML * 9) / 5 + 32);
-  fahrenheitElement.innerHTML = temperature;
-}
-let temperatureElement = document.querySelector("#temperature");
-inFahrenheit();
-
-function getWeatherHere(event) {
-  event.preventDefault();
-  navigator.geolocation.getCurrentPosition(searchLocation);
-}
-
-function searchLocation(position) {
-  let apiKey = "b77a5166cc2c236ed02e7fcc7edcd78c";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(displayWeather);
-}
-
-let currentLocation = document.querySelector("#current");
-currentLocation.addEventListener("click", getWeatherHere);
