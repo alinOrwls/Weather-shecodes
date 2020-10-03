@@ -1,16 +1,13 @@
-function formatDate(date) {
-  let now = new Date();
-  let hours = now.getHours();
+function formatDate(timestamp) {
+  let date = new Date(timestamp);
+  let hours = date.getHours();
   if (hours < 10) {
     hours = `0${hours}`;
   }
-
-  let min = now.getMinutes();
-  if (min < 10) {
-    min = `0${min}`;
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
   }
-  let day = now.getDay();
-
   let days = [
     "Sunday",
 
@@ -26,11 +23,9 @@ function formatDate(date) {
 
     "Saturday",
   ];
-  return ` ${days[day]}, ${hours}:${min}`;
+  let day = days[date.getDay()];
+  return `${day} ${hours} : ${minutes}`;
 }
-
-let time = document.querySelector("#real-time");
-time.innerHTML = formatDate(time);
 
 //2
 function displayWeather(response) {
@@ -39,10 +34,13 @@ function displayWeather(response) {
   let cityElement = document.querySelector("#city");
   let descriptionElement = document.querySelector("#description");
   let feelsElement = document.querySelector("#feels");
+  let dateElement = document.querySelector("#date");
+
   temperatureElement.innerHTML = Math.round(response.data.main.temp);
   cityElement.innerHTML = response.data.name;
   descriptionElement.innerHTML = response.data.weather[0].description;
   feelsElement.innerHTML = Math.round(response.data.main.feels_like);
+  dateElement.innerHTML = formatDate(response.data.dt * 1000);
 }
 
 function search(city) {
