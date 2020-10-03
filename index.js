@@ -58,6 +58,15 @@ function formatForm(event) {
   let city = document.querySelector("#city-input");
   search(city.value);
 }
-
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", formatForm);
+
+function inFahrenheit() {
+  let fahrenheitElement = document.querySelector("#fahrenheit");
+  let form = (temperatureElement.innerHTML * 9) / 5 + 32;
+  fahrenheitElement.innerHTML = form;
+}
+let temperatureElement = document.querySelector("#temperature");
+inFahrenheit(temperature.innerHTML);
+
+search("Tokyo");
