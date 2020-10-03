@@ -34,15 +34,15 @@ time.innerHTML = formatDate(time);
 
 //2
 function displayWeather(response) {
-  document.querySelector("#city").innerHTML = response.data.name;
-  document.querySelector("#temperature").innerHTML = Math.round(
-    response.data.main.temp
-  );
-  document.querySelector("#feels").innerHTML = Math.round(
-    response.data.main.feels_like
-  );
-  document.querySelector("#description").innerHTML =
-    response.data.weather[0].description;
+  console.log(response.data);
+  let temperatureElement = document.querySelector("#temperature");
+  let cityElement = document.querySelector("#city");
+  let descriptionElement = document.querySelector("#description");
+  let feelsElement = document.querySelector("#feels");
+  temperatureElement.innerHTML = Math.round(response.data.main.temp);
+  cityElement.innerHTML = response.data.name;
+  descriptionElement.innerHTML = response.data.weather[0].description;
+  feelsElement.innerHTML = Math.round(response.data.main.feels_like);
 }
 
 function search(city) {
@@ -79,11 +79,7 @@ function searchLocation(position) {
   let apiKey = "b77a5166cc2c236ed02e7fcc7edcd78c";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayWeather);
-  //longitude
-  //latitude
 }
 
 let currentLocation = document.querySelector("#current");
 currentLocation.addEventListener("click", getWeatherHere);
-
-search("Mexico");
