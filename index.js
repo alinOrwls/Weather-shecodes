@@ -67,6 +67,7 @@ function displayForecast(response) {
               src="https://openweathermap.org/img/wn/${
                 forecast.weather[0].icon
               }@2x.png"
+              </br>
                  <p class="card-text">
                      ${Math.round(forecast.main.temp_max)}° /  ${Math.round(
     forecast.main.temp_min
@@ -81,6 +82,7 @@ function displayForecast(response) {
               src="https://openweathermap.org/img/wn/${
                 forecast.weather[0].icon
               }@2x.png"
+              </br>
                  <p class="card-text">
                      ${Math.round(forecast.main.temp_max)}° /  ${Math.round(
     forecast.main.temp_min
@@ -95,6 +97,7 @@ function displayForecast(response) {
               src="https://openweathermap.org/img/wn/${
                 forecast.weather[0].icon
               }@2x.png"
+              </br>
                  <p class="card-text">
                      ${Math.round(forecast.main.temp_max)}° /  ${Math.round(
     forecast.main.temp_min
@@ -109,6 +112,7 @@ function displayForecast(response) {
               src="https://openweathermap.org/img/wn/${
                 forecast.weather[0].icon
               }@2x.png"
+              </br>
                  <p class="card-text">
                      ${Math.round(forecast.main.temp_max)}° /  ${Math.round(
     forecast.main.temp_min
@@ -122,6 +126,7 @@ function displayForecast(response) {
               src="https://openweathermap.org/img/wn/${
                 forecast.weather[0].icon
               }@2x.png"
+              </br>
                  <p class="card-text">
                      ${Math.round(forecast.main.temp_max)}° /  ${Math.round(
     forecast.main.temp_min
