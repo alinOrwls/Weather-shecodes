@@ -49,7 +49,7 @@ function displayWeather(response) {
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
   iconElement.setAttribute(
     "src",
-    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
 
   let fahrenheitElement = document.querySelector("#fahrenheit");
@@ -64,7 +64,7 @@ function displayForecast(response) {
   console.log(forecast);
   forecastElement.innerHTML = ` <h5 > ${formaHours(forecast.dt * 1000)}</h5>
               <img
-              src="http://openweathermap.org/img/wn/${
+              src="https://openweathermap.org/img/wn/${
                 forecast.weather[0].icon
               }@2x.png"
                  <p class="card-text">
@@ -78,7 +78,7 @@ function displayForecast(response) {
   console.log(forecast);
   forecastElement.innerHTML = ` <h5 > ${formaHours(forecast.dt * 1000)}</h5>
               <img
-              src="http://openweathermap.org/img/wn/${
+              src="https://openweathermap.org/img/wn/${
                 forecast.weather[0].icon
               }@2x.png"
                  <p class="card-text">
@@ -92,7 +92,7 @@ function displayForecast(response) {
   console.log(forecast);
   forecastElement.innerHTML = ` <h5 > ${formaHours(forecast.dt * 1000)}</h5>
               <img
-              src="http://openweathermap.org/img/wn/${
+              src="https://openweathermap.org/img/wn/${
                 forecast.weather[0].icon
               }@2x.png"
                  <p class="card-text">
@@ -106,7 +106,7 @@ function displayForecast(response) {
   console.log(forecast);
   forecastElement.innerHTML = ` <h5 > ${formaHours(forecast.dt * 1000)}</h5>
               <img
-              src="http://openweathermap.org/img/wn/${
+              src="https://openweathermap.org/img/wn/${
                 forecast.weather[0].icon
               }@2x.png"
                  <p class="card-text">
@@ -119,7 +119,7 @@ function displayForecast(response) {
   console.log(forecast);
   forecastElement.innerHTML = ` <h5 > ${formaHours(forecast.dt * 1000)}</h5>
               <img
-              src="http://openweathermap.org/img/wn/${
+              src="https://openweathermap.org/img/wn/${
                 forecast.weather[0].icon
               }@2x.png"
                  <p class="card-text">
@@ -134,7 +134,7 @@ function search(city) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayWeather);
 
-  apiUrl = `http://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
+  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayForecast);
 }
 
