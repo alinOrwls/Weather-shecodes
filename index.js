@@ -45,6 +45,11 @@ function displayWeather(response) {
   // iconElement.setAttribute(
   // "src",
   // `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+
+  let fahrenheitElement = document.querySelector("#fahrenheit");
+  fahrenheitElement.innerHTML = Math.round(
+    (response.data.main.temp * 9) / 5 + 32
+  );
 }
 
 function search(city) {
